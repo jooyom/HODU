@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>cat4</title>
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=8cah0qdej3"></script>
+    <style>
+        * {
+            list-style: none;
+
+        }
+
+        header {
+
+            background-color: #F2E9D8;
+
+        }
+
+        .menu {
+            background-color: #F2E9D8;
+            flex-direction: row;
+            align-items: center;
+            height: 102px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .menu ul {
+            padding: 0 ;
+        }
+
+        .menu li {
+            width: 43px;
+            height: 20px;
+            font-size: 16px;
+            display: inline;
+            vertical-align: middle;
+        }
+        .menu li:nth-child(2){
+            margin-left: 756px;
+        }
+        .menu li:nth-child(3){
+            margin-left: 30px;
+        }.menu li:nth-child(4){
+             margin-left: 30px;
+         }.menu li:nth-child(5){
+              margin-left: 49px;
+          }
+
+        #logo {
+            width: 130px;
+            height: 40px;
+        }
+        #dw {
+            width: 140px;
+            height: 50px;
+        }
+        .maincat {
+            background-color: #F2E9D8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .maincat li:nth-child(1){
+            font-size: 48px;height: 120px;margin-top: 200px;
+        }
+        .maincat li:nth-child(2){
+            height: 86px;margin-top: 40px;
+        }
+        .cattext {
+            height: 798px;
+        }
+        .boxcat {
+            width: 415px;
+            height: 766px;
+            margin-top: 32px;
+            margin-left: 170px;
+        }
+
+        .dw2 {
+            width: 140px;
+            height: 50px;
+            margin-top: 40px;
+        }
+        .cattext ul {
+            padding: 0;
+        }
+        h3 {
+            font-size: 36px;
+        }
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+        .cattext2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 80px;
+        }
+        .cattext2 img {
+            width: 660px; height: 390px;
+        }
+        .cattext2 ul{
+            margin-left: 110px;
+        }
+        .cattext2 li:nth-child(1){
+            font-size: 36px;
+        }
+        .cattext2 li:nth-child(2){
+            font-size: 16px; margin-top: 40px;
+        }
+        .text2 {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            font-weight: bold;
+        }
+        .text2 li:nth-child(1){
+            font-size: 48px; color: #D97652;
+        }
+        .text2 li:nth-child(2){
+            font-size: 16px; margin-top: 40px;
+        }
+        .text2 li:nth-child(3){
+            font-size: 16px;
+        }
+        .text2_color{
+            color: #D97652;
+        }
+        .cats1, .cats2 {
+            display: flex;
+            justify-content: center;
+        }
+        .more {
+            text-align: center;
+        }
+        .more li:nth-child(1){
+            font-size: 24px;
+        }
+        .more li:nth-child(2){
+            margin-top: 28px;
+        }
+        .line    {
+            background-color: #C4C4C4;
+            width: 1278px;
+            height: 1px;
+            margin-top: 80px;
+        }
+        .adress {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .adress ul {
+            width: 1280px;
+            padding: 0;
+            margin-top: 68px;
+        }
+        .adress li:nth-child(1){
+            font-size: 36px;
+        }
+        .adress li:nth-child(2){
+            color: #606367; margin-top: 20px;
+        }
+        #map {
+            width:1280px; height:520px; margin-top: 48px;
+        }
+
+
+        .sub {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            position: relative;
+        }
+        .subpop  {
+            background-color: #263140;
+            border-radius: 30px;
+            width: 1280px;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            margin-top: 80px;
+            z-index: 1;
+
+        }
+        .subpop ul {
+            padding: 0;
+        }
+        .subpop li:nth-child(1){
+            color: #FFFFFF; font-size: 36px;
+        }
+        .subpop li:nth-child(2){
+            color: #F2E9D8; margin-top: 18px;
+        }
+        .subpop li:nth-child(3){
+            color: #F2E9D8
+        }
+
+        .mail {
+            background-color: #FFFFFF;
+            border-radius: 60px;
+            width: 530px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .mail input {
+            border-width: 0;
+            margin-left: 16px;
+        }
+
+        .mail button {
+            margin-left: 137px;
+            border: none;
+            background: none;
+        }
+
+        .icon_letter {
+            margin-left: 28px;
+        }
+
+        input:focus {
+            outline: none;
+        }
+
+
+        .modal {
+            position:absolute;
+            display:none;
+        }
+
+        .modal img {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .subcat {
+            margin-top: 320px;
+            width: 1920px;
+            height: 340px;
+            position: absolute;
+        }
+        .scroll_hover {
+            z-index: 2;
+            position: relative;
+            margin-left: 1855px;
+            /*margin-top: 300px;*/
+        }
+
+
+        .hover{
+            position: absolute;
+            top: 0;
+            display: none;
+        }
+        .scroll_hover:hover .hover {
+            display: block;
+        }
+
+
+        .foot {
+            height: 160px;
+            display: flex;
+            justify-content: center;
+            margin-top: 200px;
+            flex-direction: row;
+        }
+
+        .foot li {
+            display: inline;
+        }
+        .foot li:nth-child(2){
+            margin-left: 826px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<nav class="menu">
+    <ul>
+        <li><img id="logo" src="Group.png" alt="홈페이지 이름인 호두가 영문으로 쓰여있다"></li>
+        <li>Home</li>
+        <li>About</li>
+        <li>Support</li>
+        <li><img id="dw" src="Download_btn.png" alt="다운로드버튼"></li>
+    </ul>
+</nav>
+
+
+<div class="maincat">
+    <div class="cattext">
+        <ul>
+            <li><strong>
+                Lorem Ipsum is simply<br>dummy text of the printing and</strong></li>
+            <li>
+                Lorem Ipsum is simply dummy text of the printing and<br>
+                typesetting industry.<br>
+                Lorem Ipsum has been the industry's standard dummy text<br>
+                ever since the 1500s, when an unknown</li>
+            <li><img class="dw2" src="Download_btn.png" alt="다운로드버튼"></li>
+        </ul>
+    </div>
+    <div>
+        <img class="boxcat" src="고양이%201.png" alt="머리에 박스를 쓴 고양이사진">
+    </div>
+</div>
+
+
+
+<div class="cattext2">
+    <img src="img_4.png" alt="침대에 누워있는 고양이">
+    <ul>
+        <li><strong> Lorem Ipsum is simply<br>
+            dummy text of the printing<br> and dummy text</strong></li>
+        <li>Lorem Ipsum is simply dummy text of the printing and typesetting<br> industry.</li>
+    </ul>
+</div>
+
+
+<div class="text2">
+    <ul>
+        <li>dummy text of the printing and dummy</li>
+        <li>
+            <span> Lorem Ipsum is simply</span>
+            <span class="text2_color">dummy text</span>
+            <span>of the printing and typesetting industry.</span>
+        </li>
+        <li>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown </li>
+    </ul>
+</div>
+
+
+<div>
+    <div class="cats1">
+        <img src="cat1.png" alt="캣타워 위에 있는 고양이 호두">
+        <img src="cat2.png" alt="벽 앞에 뒤 돌아 앉아있는 호두">
+        <img src="cat3.png" alt="벽 앞에 나를 쳐다보는 호두">
+    </div>
+    <div class="cats2">
+        <img src="cat4.png" alt="호두 근접샷">
+        <img src="car5.png" alt="호두를 살짝 위에서 찍은 사진">
+        <img src="cat6.png" alt="하품하는 호두 귀여워">
+    </div>
+    <ul class="more">
+        <li><strong>Continue exploring HODU</strong></li>
+        <li><img src="showmorebtn.png" alt="더보기 버튼"></li>
+    </ul>
+</div>
+
+
+
+<div class="adress">
+    <div class="line"></div>
+    <ul>
+        <li><strong>Where you’ll be</strong></li>
+        <li>330, Cheomdan-ro, Jeju-si, Jeju-do, Republic of Korea</li>
+    </ul>
+    <div id="map"></div>
+</div>
+
+
+
+<div class="sub">
+    <div class="subpop">
+        <ul>
+            <li><strong> Subscribe to our Blog post</strong></li>
+            <li>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</li>
+            <li>Lorem Ipsum has been the industry's standard dummy text </li>
+        </ul>
+        <form action="#" name="mail" method="get" class="mail">
+            <img class="icon_letter" src="mail.png" alt="편지봉투 모양의 아이콘">
+           <!-- <label for="user_email">Enter your e-mail address</label>-->
+            <input type="email" name="mail" id="user_email" placeholder="Enter your e-mail address">
+            <button class="btn_sub"><img src="Subscribe_btn.png" alt="구독하기 버튼"></button>
+        </form>
+    </div>
+    <img class="subcat" src="img_5.png" alt="호두의 얼굴이 배경으로 들어가있다">
+    <div class="scroll_hover">
+        <img class="scroll" src="scroll-top-btn.png" alt="위로 스크롤하는 버튼">
+        <img class="hover" src="scroll-top-btn_hover.png" alt="스크롤버튼 호버">
+    </div>
+</div>
+
+<div class="modal">
+    <img src="modal.png" alt="구독에감사하는 호두">
+</div>
+
+<footer class="foot">
+    <ul>
+        <li><img src="Logo-fin.png" alt="홈페이지 이름인 HODU로고가 있다"></li>
+        <li><img src="footer-icon-group.png" alt="SNS 아이콘 순서대로 블로그 인스타 페북 유튜브"></li>
+    </ul>
+</footer>
+
+<script>
+
+    var map = new naver.maps.Map('map', {
+        center: new naver.maps.LatLng(33.442648494159 , 126.57175438405),
+        zoom: 18
+    });
+
+    var marker = new naver.maps.Marker({
+        position: new naver.maps.LatLng(33.442648494159 , 126.57175438405),
+        map: map
+    });
+
+    const modal = document.querySelector('.modal');
+    const OpenModal = document.querySelector('.btn_sub');
+
+
+    OpenModal.addEventListener("click" , ()=>{
+        modal.style.display="flex";
+    });
+
+</script>
+</body>
+</html>
